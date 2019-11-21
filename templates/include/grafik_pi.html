@@ -1,0 +1,58 @@
+<script>
+Highcharts.chart('hasilGrafik', {
+    chart: {
+        type: 'spline'
+    },
+    
+    title: {
+        text: 'Aproksimasi nilai PI'
+    },
+
+    xAxis: {
+        title: {
+            text: 'Data ke-'
+        }
+    },
+
+    yAxis: {
+        title: {
+            text: 'Nilai Pi'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            }
+        }
+    },
+
+    series: [{
+        name: 'Aproksimasi nilai PI',
+        data:  {{ value }}
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>

@@ -1,0 +1,106 @@
+{% extends "extends/base.html" %}
+{% block title %}
+    <title>Week 2 Task 2 | Big Data Analytics</title>
+{% endblock title %}
+{% block root-title %}
+    Home
+{% endblock root-title %}
+{% block page-title1 %}
+    Week 2 Task 2
+{% endblock page-title1 %}
+{% block page-title2 %}
+    Week 2 Task 2
+{% endblock page-title2 %}
+{% block content %}
+<h2>Halaman Week 2 Task 2</h2><br>
+<button onclick="window.location.href='/'" class="btn btn-outline btn-rounded btn-info">
+    <i class="ti-arrow-left m-l-5"></i>
+    <span>Back Home</span>
+</button>
+<div class="row" onload="myfunction()">
+    <div class="col-md-8">
+        <div class="white-box">
+            <div class="row">
+                <h3 class="box-title m-b-0">Rata-Rata Nilai</h3>
+                <p class="text-muted m-b-30 font-13">Menghitung Rata-Rata Nilai Siswa</p>
+                <form class="form-horizontal" action="week22" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 1</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai1" id="nilai1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 2</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai2" id="nilai2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 3</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai3" id="nilai3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 4</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai4" id="nilai4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 5</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai5" id="nilai5">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 6</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai6" id="nilai6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 7</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai7" id="nilai7">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Nilai Ke 8</label>
+                        <div class="col-sm-12">
+                        <input type="number" class="form-control" name="nilai8" id="nilai8">
+                        </div>
+                    </div>
+                    <button id="submit" class="btn btn-block btn-info btn-rounded">Proses</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-md-4" for="example-email"><h5>Rata-Rata</h5></label>
+                        <div class="col-md-8">
+                            <input value="{{average}}" name="example-email" class="form-control" readonly>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4" for="example-email"><h5>Nilai Tertinggi</h5></label>
+                        <div class="col-md-8">
+                            <input value="{{max}}" name="example-email" class="form-control" readonly>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4" for="example-email"><h5>Nilai Terendah</h5></label>
+                        <div class="col-md-8">
+                            <input value="{{min}}" name="example-email" class="form-control" readonly>
+                        </div>                        
+                    </div>
+                    
+                </div>
+                <div class="table-responsive border tableFixHead" style="height:470px" id="hasilGrafik"></div>
+            </div>
+    </div>
+    {% endblock content %}

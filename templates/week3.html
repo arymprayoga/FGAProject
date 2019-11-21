@@ -1,0 +1,88 @@
+{% extends "extends/base.html" %}
+{% block title %}
+    <title>Week 3 | Big Data Analytics</title>
+{% endblock title %}
+{% block root-title %}
+    Home
+{% endblock root-title %}
+{% block page-title1 %}
+<button onclick="window.location.href='/'" class="btn btn-outline btn-rounded btn-info">
+    <i class="ti-arrow-left m-l-5"></i>
+    <span>Back Home</span>
+</button> Week 3
+{% endblock page-title1 %}
+{% block page-title2 %}
+    Week 3
+{% endblock page-title2 %}
+{% block content %}
+<div class="panel panel-info block4">
+    <div class="panel-heading"> Data Suhu
+        <div class="pull-right"><a href="#" data-perform="panel-collapse"><i class="ti-minus"></i></a> <a href="#" data-perform="panel-dismiss"><i class="ti-close"></i></a> </div>
+    </div>
+    <div class="panel-wrapper collapse in" aria-expanded="true">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover" data-height="10">
+                            <thead>
+                                <tr>
+                                <th scope="col">Kota</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in kota %}
+                                    <tr>
+                                        <td>{{ x }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover" data-height="10">
+                            <thead>
+                                <tr>
+                                <th scope="col">Suhu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in suhu %}
+                                    <tr>
+                                        <td>{{ x }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-md-4" for="example-email"><h5>Suhu Terendah</h5></label>
+                            <div class="col-md-8">
+                                <input value="{{terendah}}" name="example-email" class="form-control" readonly>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <label class="col-md-4" for="example-email"><h5>Suhu Tertinggi</h5></label>
+                            <div class="col-md-8">
+                                <input value="{{tertinggi}}" name="example-email" class="form-control" readonly>
+                            </div>                        
+                        </div>     
+                        <div class="row">
+                            <label class="col-md-4" for="example-email"><h5>Suhu Rata-Rata</h5></label>
+                            <div class="col-md-8">
+                                <input value="{{average}}" name="example-email" class="form-control" readonly>
+                            </div>                        
+                        </div>                    
+                    </div>
+                    <div class="table-responsive border tableFixHead" style="height:470px" id="hasilGrafik"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
