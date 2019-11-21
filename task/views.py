@@ -61,7 +61,6 @@ def index(request):
 
 def function_week1(request):
     if request.method == 'POST':
-        # 'E:/Pak Imam/Digitalent/dataset_dump.csv'
         dataset = request.FILES['inputDataset']
         persentase_data_training = 90
         banyak_fitur = int(request.POST['banyakFitur'])
@@ -169,7 +168,7 @@ def function_week3(request):
     import math
     url = "http://api.openweathermap.org/data/2.5/box/city?bbox=105.6,-8,113.9,-5,1000&appid="
     url2 = "http://api.openweathermap.org/data/2.5/box/city?bbox=101,0.5,104,8,1000&appid="
-    api = "3d509f58acb6314540080aca936f6db7"
+    api = "your api key"
     link = url + api
     link2 = url2 + api
 
